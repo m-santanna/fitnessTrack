@@ -9,7 +9,7 @@ CREATE TABLE users (
 CREATE TABLE exercises (
     id SERIAL PRIMARY KEY,
     exercise_name VARCHAR(255)
-)
+);
 
 CREATE TABLE sets (
     id SERIAL PRIMARY KEY,
@@ -20,4 +20,13 @@ CREATE TABLE sets (
     current_weight INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
     FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE RESTRICT,
+);
+
+CREATE TABLE egroup (
+id SERIAL PRIMARY KEY,
+group_name VARCHAR(255) NOT NULL,
+user_id INTEGER NOT NULL,
+exercises_id INTEGER[] NOT NULL,
+is_public BOOLEAN NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
