@@ -3,6 +3,8 @@ const helmet = require('helmet');
 const app = express();
 const PORT = 8080;
 
+import { getSet, getUserSets, createSets } from './database/database.js'
+
 app.use(helmet());
 app.use(express.json());
 
