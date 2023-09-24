@@ -3,7 +3,7 @@ CREATE TABLE users (
     username VARCHAR(255) NOT NULL,
     user_password VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    created TIMESTAMP NOT NULL DEFAULT NOW()
+    timestamp DATE NOT NULL DEFAULT NOW()
 );
 
 CREATE TABLE exercises (
@@ -18,11 +18,12 @@ CREATE TABLE sets (
     current_set INTEGER NOT NULL,
     reps INTEGER NOT NULL,
     current_weight INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-    FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE RESTRICT,
+    timestamp DATE NOT NULL DEFAULT NOW(),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE RESTRICT
 );
 
-CREATE TABLE egroup (
+CREATE TABLE egroups (
 id SERIAL PRIMARY KEY,
 group_name VARCHAR(255) NOT NULL,
 user_id INTEGER NOT NULL,
