@@ -15,6 +15,11 @@ async function getSet(set_id) {
     return set;
 }
 
+async function getUsers() {
+    const users = await sql`SELECT * FROM users`;
+    return users;
+}
+
 async function getUserSets(user_id) {
     const sets = await sql`SELECT * FROM sets WHERE user_id = ${user_id}`;
     if (sets === undefined) {
@@ -100,6 +105,6 @@ async function removeExerciseFromExerciseGroup(user_id, group_name, exercise_id)
     WHERE (group_name = ${group_name} AND user_id = ${user_id});`;
 }
 
-module.exports = { getSet, getUserSets, getLastSetFromUser, createSets, getUserByUsername, deleteSets,
+module.exports = { getSet, getUsers, getUserSets, getLastSetFromUser, createSets, getUserByUsername, deleteSets,
     getAllExerciseGroupsFromUser, getLastExerciseGroupFromUser, createExerciseGroup, deleteExerciseGroup,
     addExerciseToExerciseGroup, removeExerciseFromExerciseGroup };

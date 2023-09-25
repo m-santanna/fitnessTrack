@@ -3,7 +3,7 @@ const helmet = require('helmet');
 const app = express();
 const PORT = 8080;
 
-const { getSet, getUserSets, getLastSetFromUser, createSets, getUserByUsername, deleteSets,
+const { getSet, getUsers, getUserSets, getLastSetFromUser, createSets, getUserByUsername, deleteSets,
     getAllExerciseGroupsFromUser, createExerciseGroup, deleteExerciseGroup, addExerciseToExerciseGroup, 
     removeExerciseFromExerciseGroup } = require('./database/database.js');
 
@@ -16,21 +16,15 @@ app.listen(PORT, () => {
 });
 
 
-app.get('/set/:id', async (req, res) => {
-    const id = req.params.id;
-    const set = await getSet(id);
-    if (set === 0) {
-        res.status(404).send({});
-    }
-    else {
-        res.send(set);
-    }
-})
-
-
 app.route('/')
 .get(async (req, res) => {
     res.status(200).send('recieved')
+})
+
+
+app.get('/users', async (req, res) => {
+    users = await getUsers();
+    res.status(200).send(users);
 })
 
 
