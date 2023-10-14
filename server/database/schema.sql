@@ -17,7 +17,7 @@ CREATE TABLE sets (
     exercise_id INTEGER NOT NULL,
     current_set INTEGER NOT NULL,
     reps INTEGER NOT NULL,
-    current_weight INTEGER NOT NULL,
+    current_weight NUMERIC(5,2) NOT NULL,
     timestamp DATE NOT NULL DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE RESTRICT
