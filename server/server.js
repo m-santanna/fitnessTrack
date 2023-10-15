@@ -28,6 +28,19 @@ app.get('/users', async (req, res) => {
 })
 
 
+app.get('/:username/lastset', async (req, res) => {
+    const username = req.params.username;
+    const user = await getUserByUsername(username);
+    if (user === 0) {
+        res.status(404).send({});
+    }
+    else {
+        const set = await getLastSetFromUser(user.id);
+        res.send(set);
+    }
+});
+
+
 app.route('/:username/sets')
     .get(async (req, res) => {
         const username = req.params.username;
