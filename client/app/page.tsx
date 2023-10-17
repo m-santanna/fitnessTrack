@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 interface User {
   id: number;
   username: string;
@@ -5,8 +6,13 @@ interface User {
 
 export default async function Home() {
   return (
-    <main>
-      <h1>hello world</h1>
-    </main>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <h1>hello world</h1>
+      </main>
+    </>
   );
 }
