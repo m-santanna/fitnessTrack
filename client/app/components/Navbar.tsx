@@ -1,12 +1,13 @@
-import React from "react";
-import Link from "next/link";
-import MenuItem from "./MenuItem";
+import UserCircle from "../icons/UserCircle";
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li>hello</li>
+    <nav className="w-full h-14 bg-slate-400 px-4 p-2">
+      <ul className="flex justify-between items-center">
+        <li>Hello</li>
+        <li>
+          <UserCircle className="w-10 h-10" />
+        </li>
       </ul>
     </nav>
   );

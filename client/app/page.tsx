@@ -7,7 +7,7 @@ interface User {
 export default async function Home() {
   return (
     <>
-      <header>
+      <header className="flex">
         <Navbar />
       </header>
       <main>
