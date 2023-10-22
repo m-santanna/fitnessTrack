@@ -1,3 +1,4 @@
+import Calendar from "./components/Calendar";
 import Navbar from "./components/Navbar";
 interface User {
   id: number;
@@ -7,11 +8,12 @@ interface User {
 export default async function Home() {
   return (
     <>
-      <header className="flex">
+      <header>
         <Navbar />
       </header>
       <main>
         <h1>hello world</h1>
+        <Calendar />
       </main>
     </>
   );
