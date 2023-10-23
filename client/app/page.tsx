@@ -1,8 +1,8 @@
-import Calendar from "./components/Calendar";
-import Navbar from "./components/Navbar";
+import Calendar from './components/Calendar'
+import Navbar from './components/Navbar'
 interface User {
-  id: number;
-  username: string;
+  id: number
+  username: string
 }
 
 export default async function Home() {
@@ -16,5 +16,5 @@ export default async function Home() {
         <Calendar />
       </main>
     </>
-  );
+  )
 }

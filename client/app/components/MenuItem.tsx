@@ -1,10 +1,10 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
 
 interface MenuItemProps {
-  name: string;
-  a: string;
-  badge?: string;
+  name: string
+  a: string
+  badge?: string
 }
 
 function MenuItem({ name, a, badge }: MenuItemProps) {
@@ -15,7 +15,7 @@ function MenuItem({ name, a, badge }: MenuItemProps) {
         {badge && <span className="badge">{badge}</span>}
       </Link>
     </li>
-  );
+  )
 }
 
-export default MenuItem;
+export default MenuItem

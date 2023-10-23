@@ -1,5 +1,5 @@
-import UserCircle from "../icons/UserCircle";
-import DarkThemeToggle from "./DarkThemeToggle";
+import UserCircle from '../icons/UserCircle'
+import DarkThemeToggle from './DarkThemeToggle'
 
 function Navbar() {
   return (
@@ -10,7 +10,7 @@ function Navbar() {
         <UserCircle className="w-10 h-10" />
       </div>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

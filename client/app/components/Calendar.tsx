@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import * as React from "react";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import * as React from 'react'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
 
 function BasicDateCalendar() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateCalendar />
     </LocalizationProvider>
-  );
+  )
 }
 
 const Calendar = () => {
@@ -18,7 +18,7 @@ const Calendar = () => {
     <div>
       <BasicDateCalendar />
     </div>
-  );
-};
+  )
+}
 
-export default Calendar;
+export default Calendar
